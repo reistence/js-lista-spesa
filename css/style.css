@@ -4,6 +4,13 @@
   box-sizing: border-box;
 }
 
+body {
+  background-image: url("../img/cart.jpg");
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  height: 100vh;
+}
 .container {
   margin: 1em auto;
   width: 90%;
@@ -23,8 +30,19 @@
   margin-top: 0.5em;
   border-radius: 20px;
   padding: 0.2em 0.5em;
+  background-color: black;
+  border: none;
+  color: #fdb801;
 }
 
 ul {
-  margin-left: 2em;
+  background-color: antiquewhite;
+  list-style: inside;
+  padding: 1em;
+  border-radius: 30px;
+  width: 60%;
+}
+
+ul li {
+  border-bottom: 1px dotted gray;
 }
