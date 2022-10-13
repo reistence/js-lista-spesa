@@ -13,25 +13,31 @@ Consigli:
 let grocery = ["apple", "oranges", "milk", "beef", "chicken", "beer"];
 console.log(grocery);
 const list = document.getElementById("list");
-// const itemFieldInput = document.getElementById("item-field");
+const itemFieldInput = document.getElementById("item-field");
 
-// const addBtn = document.getElementById("add");
-// const removeBtn = document.getElementById("remove");
+const addBtn = document.getElementById("add");
+const removeBtn = document.getElementById("remove");
 
-// addBtn.addEventListener("click", function () {
-//   const itemField = itemFieldInput.value;
+console.log(grocery);
 
-//   grocery.push(itemField);
+addBtn.addEventListener("click", function () {
+  const itemField = itemFieldInput.value;
 
-//   console.log(itemField);
-//   console.log(grocery);
-// });
+  grocery.push(itemField);
+  console.log(itemField);
+  console.log(grocery);
+  list.innerHTML += ` <li class="item">${itemField}</li>`;
+});
 
-// console.log(grocery);
+removeBtn.addEventListener("click", function () {
+  grocery.pop();
+  list.removeChild(list.lastElementChild);
+  console.log(grocery);
+});
 
 let i = 0;
 
-while (i <= grocery.length) {
+while (i < grocery.length) {
   const thisItem = grocery[i];
   list.innerHTML += ` <li class="item">${thisItem}</li>`;
   i++;
