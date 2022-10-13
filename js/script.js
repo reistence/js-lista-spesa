@@ -11,20 +11,25 @@ const removeBtn = document.getElementById("remove");
 addBtn.addEventListener("click", function () {
   //grab input value
   let itemField = itemFieldInput.value;
-  //push input.value to grocery
-  grocery.push(itemField);
-  // add item to list
-  list.innerHTML += ` <li class="item">${itemField}</li>`;
-  // clean input field
-  itemFieldInput.value = "";
+
+  if (itemField != "") {
+    //push input.value to grocery
+    grocery.push(itemField);
+    // add item to list
+    list.innerHTML += ` <li class="item">${itemField}</li>`;
+    // clean input field
+    itemFieldInput.value = "";
+  }
 });
 
 //remove btn
 removeBtn.addEventListener("click", function () {
-  //remove last item from grocery
-  grocery.pop();
-  //remove list last itme
-  list.removeChild(list.lastElementChild);
+  if (grocery.length > 0) {
+    //remove last item from grocery
+    grocery.pop();
+    //remove list last itme
+    list.removeChild(list.lastElementChild);
+  }
 });
 
 let i = 0;

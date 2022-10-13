@@ -12,8 +12,8 @@ body {
   height: 100vh;
 }
 .container {
-  margin: 1em auto;
-  width: 90%;
+  margin: 10vh auto;
+  width: 60%;
 }
 .add {
   display: flex;
