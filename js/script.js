@@ -1,44 +1,37 @@
-/*
-Consegna:
-Data una lista della spesa, stampare sulla pagina 
-(anche brutalmente, basta che si vedano) gli elementi della 
-lista individualmente con un ciclo while.
-Consigli:
-- Ricordiamoci di inizializzare la variabile di 
-    contatore prima dell'inizio del ciclo while
-- Ricordiamoci di incrementare il contatore, o comunque di
- inserire una condizione di uscita, all'interno ciclo while
-*/
-
+// Create grocery list
 let grocery = ["apple", "oranges", "milk", "beef", "chicken", "beer"];
 console.log(grocery);
+// grab elements from dom
 const list = document.getElementById("list");
 const itemFieldInput = document.getElementById("item-field");
-
 const addBtn = document.getElementById("add");
 const removeBtn = document.getElementById("remove");
 
-console.log(grocery);
-
+// add item
 addBtn.addEventListener("click", function () {
-  const itemField = itemFieldInput.value;
-
+  //grab input value
+  let itemField = itemFieldInput.value;
+  //push input.value to grocery
   grocery.push(itemField);
-  console.log(itemField);
-  console.log(grocery);
+  // add item to list
   list.innerHTML += ` <li class="item">${itemField}</li>`;
+  // clean input field
+  itemFieldInput.value = "";
 });
 
+//remove btn
 removeBtn.addEventListener("click", function () {
+  //remove last item from grocery
   grocery.pop();
+  //remove list last itme
   list.removeChild(list.lastElementChild);
-  console.log(grocery);
 });
 
 let i = 0;
-
 while (i < grocery.length) {
   const thisItem = grocery[i];
+  // on each iteration add in list li
   list.innerHTML += ` <li class="item">${thisItem}</li>`;
+  // increse i
   i++;
 }
