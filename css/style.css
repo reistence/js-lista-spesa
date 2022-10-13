@@ -1,0 +1,30 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  margin: 1em auto;
+  width: 90%;
+}
+.add {
+  display: flex;
+  flex-direction: column;
+  margin: 1em 0;
+}
+
+.add input {
+  width: 50%;
+  margin-top: 0.5em;
+}
+
+.add button {
+  margin-top: 0.5em;
+  border-radius: 20px;
+  padding: 0.2em 0.5em;
+}
+
+ul {
+  margin-left: 2em;
+}
